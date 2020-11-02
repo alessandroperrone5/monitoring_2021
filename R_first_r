@@ -1,0 +1,21 @@
+#
+
+primates <- c(3, 5, 9, 15, 40)
+primates
+
+crabs <- c(199, 70, 30, 10, 5)
+
+plot(primates, crabs)
+
+
+plot(primates, crabs, col="red", pch=19)
+
+plot(primates, crabs, col="red", pch=19, cex=2)
+
+plot(primates, crabs, col="red", pch=19, cex=2, main="my first ecological graph in R!")
+
+data.frame(primates, crabs)
+ecoset <- data.frame(primates, crabs)
+
+(3+5+9+15+40)/5
+
