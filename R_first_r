@@ -38,7 +38,7 @@ Error in h(simpleError(msg, call)) :
   #$ link elements and dataset
   not error: plot(meuse$cadmium, meuse$zinc)
   
-  #if you attach is not necessary $
+  #if you attach is not necessary $ --> just once, then you have to #deattach to stop it
 attach(meuse)
 plot(cadmium,zinc)
 
