@@ -18,4 +18,29 @@ data.frame(primates, crabs)
 ecoset <- data.frame(primates, crabs)
 
 (3+5+9+15+40)/5
+---------------
 
+#install.packages is used to install packages
+install.packages("sp")
+library(sp)
+
+#data is used to recall datasets
+data(meuse)
+
+#View (with V not v) ... Invoke a spreadsheet-style data viewer on a matrix-like R object.
+View(meuse)
+
+#exercise: plot zinc (y) against cadmium (x)
+see an error --> plot(cadmium, zinc)
+Error in h(simpleError(msg, call)) : 
+  error in evaluating the argument 'x' in selecting a method for function 'plot': oggetto "cadmium" non trovato
+  
+  #$ link elements and dataset
+  not error: plot(meuse$cadmium, meuse$zinc)
+  
+  #if you attach is not necessary $
+attach(meuse)
+plot(cadmium,zinc)
+
+#head is used to see the first data
+head(meuse)
