@@ -26,10 +26,26 @@ setwd (wd=working directory)
 
 #setwd("path/lab")
 #setwd for Windows
-> setwd("C:/lab")
-> covid <- read.table("covid_agg.csv", header=TRUE)
-> covid
+ setwd("C:/lab")
+ covid <- read.table("covid_agg.csv", header=TRUE)
+ covid
 
 
 #point pattern analysis or spatial statistics (spatstat)
 install.packages("spatstat")
+------------
+20/11
+setwd("C:/lab")
+covid <- read.table("covid_agg.csv", header=TRUE)
+covid
+head(covid)
+
+summary(covid)
+
+# ggplot2
+library(ggplot2)
+ggplot(covid, aes(x = lon, y = lat)) + geom_point()
+ggplot(covid, aes(x = lon, y = lat, size = cases)) + geom_point()
+
+
+
