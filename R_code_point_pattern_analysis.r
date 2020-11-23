@@ -45,3 +45,56 @@ points(covid_planar)
 
 #putting the countries in top of the map
 install.packages("rgdal")
+--------
+
+23/11
+library(spatstat)
+setwd("C:/lab/")
+covid <- read.table("covid_agg.csv", header=TRUE)
+head(covid)
+attach(covid)
+covid_planar <- ppp(lon, lat, c(-180,180), c(-90,90))
+density_map <- density(covid_planar)
+plot(density_map)
+
+# Exercise: change the colour of the map
+cl <- colorRampPalette(c('blue','yellow','orange','red','magenta'))(100) #
+plot(density_map, col = cl)
+points(covid_planar)
+  
+# sudo apt-get update
+# sudo apt-get install libgdal-dev libproj-dev
+install.packages("rgdal")
+library(rgdal)
+
+coastlines <- readOGR("ne_10m_coastline.shp")                 
+plot(density_map, col = cl)
+points(covid_planar)
+plot(coastlines, add = TRUE)
+
+cl <- colorRampPalette(c('pink','green','orange','red','magenta'))(100) # 
+plot(density_map, col = cl)
+points(covid_planar)
+plot(coastlines, add = TRUE)                 
+points(covid_planar, pch = 19)
+points(covid_planar, pch = 19, cex = 0.5)
+
+#for png, saved in "lab" 
+pdf("figure1.pdf")
+cl <- colorRampPalette(c('pink','green','orange','red','magenta'))(100) # 
+plot(density_map, col = cl)
+points(covid_planar, pch = 19, cex = 0.5)
+plot(coastlines, add = TRUE)
+dev.off()
+
+###interpolate case data with "Smooth"
+marks(covid_planar) <- cases
+cases_map <- Smooth(covid_planar)
+plot(cases_map, col = cl)
+plot(coastlines, add = T) .... #T is TRUE
+points(covid_planar)
+
+                 
+
+                                  
+       
