@@ -117,7 +117,11 @@ plot(Spoints, cex=Spoints$cases, col = 'purple3', lwd = 3, add=T)
 cl <- colorRampPalette(c('lightpink2','lightsalmon','tomato1','red3','maroon'))(100)
 plot(cases_map, col = cl)
 plot(Spoints, cex=Spoints$cases/10000, col = 'purple3', lwd = 3, add=T) ###number of cases / 10000
-
-               
+###put a smoother to the coastlines to resampling
+library(rgdal)
+coastlines <- readOGR("ne_10m_coastline.shp")
+plot(coastlines, add=T)
+          
+     
                               
        
