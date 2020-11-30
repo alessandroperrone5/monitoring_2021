@@ -122,6 +122,19 @@ library(rgdal)
 coastlines <- readOGR("ne_10m_coastline.shp")
 plot(coastlines, add=T)
           
-     
-                              
-       
+---------------
+30/11
+#leonardo zabotti data
+setwd("C:/lab/")
+leo <- read.table("dati_zabotti.csv", header=T, sep=",")
+head(leo)
+attach(leo)
+library(spatstat)     
+summary(leo)                              
+leo_ppp <- ppp(x, y, c(2300000,2325000), c(5005000,5045000))       
+density_map <- density(leo_ppp)
+plot(density_map)
+points(leo_ppp)
+                
+#save workspace : go to "file" and "save workspace"
+ 
