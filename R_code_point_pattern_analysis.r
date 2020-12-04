@@ -137,4 +137,20 @@ plot(density_map)
 points(leo_ppp)
                 
 #save workspace : go to "file" and "save workspace"
- 
+ ------
+4/12
+#interpolate student data
+setwd("C:/lab/")
+load("point_pattern_analysis.RData")    
+attach(leo)
+marks(leo_ppp) <- chlh
+load("point_pattern_analysis.RData")
+chlh_map <- Smooth(leo_ppp)
+plot(chlh_map)
+points(leo_ppp)
+cl <- colorRampPalette(c('yellow','orange','red','green'))(100) # 
+plot(chlh_map, col=cl)
+points(leo_ppp)
+## Exercise: do the same for chlorophyll in the sediment (chls)
+-> #just change chlh with chls
+
