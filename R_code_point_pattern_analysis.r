@@ -139,12 +139,15 @@ points(leo_ppp)
 #save workspace : go to "file" and "save workspace"
  ------
 4/12
-#interpolate student data
+#interpolatation of students data
 setwd("C:/lab/")
-load("point_pattern_analysis.RData")    
+load("point_pattern_analysis.RData") 
+#ls function: list, ()=every data
+ls()   
+head(leo)
+library(spatstat)
 attach(leo)
 marks(leo_ppp) <- chlh
-load("point_pattern_analysis.RData")
 chlh_map <- Smooth(leo_ppp)
 plot(chlh_map)
 points(leo_ppp)
@@ -153,4 +156,34 @@ plot(chlh_map, col=cl)
 points(leo_ppp)
 ## Exercise: do the same for chlorophyll in the sediment (chls)
 -> #just change chlh with chls
+marks(leo_ppp) <- chls
+chls_map <- Smooth(leo_ppp)
+plot(chls_map, col=cl)
+points(leo_ppp)
+###see several graphs at the same time (multipanel)
+#par function
+par(mfrow=c(1,3)) #multiframerow, 1row and 3columns to have different graphs (e.g. plot(density), plot(chlh), plot(chls)
+-->#let'do it
+par(mfrow=c(1,3))
+# first graph: density map
+plot(density_map, col=cl)
+points(leo_ppp)
+#second graph: chlh
+plot(chlh_map, col=cl)
+points(leo_ppp)
+# third graph: chls
+plot(chls_map, col=cl)
+points(leo_ppp)
 
+#excercise: build a multipanel with 3rows and 1column
+par(mfrow=c(3,1))
+#now same functions as before
+# first graph: density map
+plot(density_map, col=cl)
+points(leo_ppp)
+#second graph: chlh
+plot(chlh_map, col=cl)
+points(leo_ppp)
+# third graph: chls
+plot(chls_map, col=cl)
+points(leo_ppp)
