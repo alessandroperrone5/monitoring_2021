@@ -26,3 +26,46 @@ bubble(meuse, "zinc")
 
 #color of bubbles
 bubble(meuse, "lead", col="red")
+---------------
+#lecture 16/11
+
+#install the ggplot2 package
+install.packages("ggplot2")
+
+#ecological data.frame
+biofuels <- c(120, 200, 350, 570, 750) # array of values: c
+biofuels
+oxydative <- c(1200, 1300, 21000, 34000, 50000)
+oxydative
+
+#let's create a table
+d <- data.frame(biofuels, oxydative)
+d
+
+#ggplot2
+#it's the same to do data.frame(biofuels,oxydative)
+ggplot(d, aes(x = biofuels, y = oxydative)) + geom_point()
+#aes is aesthethic, to explain to R what are the variables that we want to plot
+#geom_point to explain how to build the graph, without other arguments ()
+
+#color and size
+ggplot(d, aes(x = biofuels, y = oxydative)) + geom_point(col="red", size=2)
+#use lines instead of points
+ggplot(d, aes(x = biofuels, y = oxydative)) + geom_line()
+#points and lines together
+ggplot(d, aes(x = biofuels, y = oxydative)) + geom_point(col="red", size=2) + geom_line()
+#instead of points and lines, we can use POLYGONS
+ggplot(d, aes(x = biofuels, y = oxydative)) + geom_polygon()
+---------------------------------------
+
+#######IMPORT DATA FROM AN EXTERNAL SOURCE
+setwd (wd=working directory)
+
+#setwd for Windows
+setwd("C:/lab")
+
+#read.table to import dataset inside R
+covid <- read.table("covid_agg.csv", header=TRUE)
+#header=TRUE to say each variable has a name
+covid
+
