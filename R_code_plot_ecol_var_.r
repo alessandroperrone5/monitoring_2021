@@ -39,3 +39,30 @@ plot(cadmium,zinc)
 
 #pairs --> scatterplot matrices (to confront all the elements and all their possible relationships)
 pairs(meuse)
+
+#####lecture 9/11
+#recall dataset : library(...)
+library(sp)
+data(meuse)
+pairs(meuse)
+head(meuse)
+
+#cadmium,copper,lead, zinc
+#pairs with soil variables (not all dataset)
+#from column3 and column6
+pairs(meuse[,3:6])          #[,n1:n2] quadratic parentheses for some elements of the dataset #, comma is for introduce new arguments
+#to default R consider values in columns
+
+#let's use the name of the columns
+pairs(~cadmium+copper+lead+zinc, data=meuse)  #tilde ~ : Alt+126, group several objects all together
+
+#let's prettify the graph
+#exercise: change the color
+pairs(~cadmium+copper+lead+zinc, data=meuse, col="red") 
+#change the color of single panels by the par() function
+
+#exercise: change the symbol to filled triangles: pch function
+pairs(~cadmium+copper+lead+zinc, data=meuse, col="red", pch=17)
+
+#exercise: increase the size of triangles
+pairs(~cadmium+copper+lead+zinc, data=meuse, col="red", pch=17, cex=3)
