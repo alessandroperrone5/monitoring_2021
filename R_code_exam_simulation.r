@@ -27,3 +27,4 @@ dift <- tjan - toct
 cldif <- colorRampPalette(c('blue','white','red'))(100) #
 plot(dift, col=cldif)
 #the reddish, the higher difference / the blueish, the lower difference
+
