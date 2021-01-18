@@ -66,6 +66,20 @@ setwd("C:/lab")
 
 #read.table to import dataset inside R
 covid <- read.table("covid_agg.csv", header=TRUE)
-#header=TRUE to say each variable has a name
+#header=TRUE to say each variable has a name in the first line (category,country,cases,lat,lon)
 covid
+--------------------------
+#lecture 20/11
+setwd("C:/lab")
+covid <- read.table("covid_agg.csv", header=TRUE)
+covid
+head(covid)
+summary(covid)
 
+#use ggplot2 library
+library(ggplot2)
+ggplot(covid, aes(x = lon, y = lat)) + geom_point()
+#changing the size of data based on number of cases
+ggplot(covid, aes(x = lon, y = lat, size = cases)) + geom_point()
+
+#let's use this points to make POINT PATTERN ANALYSIS (in another Github file)
