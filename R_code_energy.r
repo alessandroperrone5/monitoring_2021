@@ -12,7 +12,7 @@ plot(copNDVI)
 #let's remove the blue part and brown part, the image is usually coded from 0 to 100 (the NDVI value)...
 #...but let's use a simple manner: 8 bit so from 0 to 2^8 (255)... bit is 1(true) or 0(false)...2 info,2colors
 #...let's remove the values which codes are 253-254-255
-copNDVI <- reclassify(copNDVI, cbind(253:255, NA))
+copNDVI <- reclassify(copNDVI, cbind(253:255, NA)) #NA stays for Not Assigned
 plot(copNDVI)
 #we have overwrote the previous file
 #the greener, the higher biomass level
@@ -20,8 +20,8 @@ plot(copNDVI)
 install.packages("rasterVis")
 library(rasterVis)
 levelplot(copNDVI)
-#the function to do a mean of every level of the raster (composed of pixels) and every main is a point, linking this point we have a profile (in this case energy potential in world). 
--> #this profile is shown next to the map and it's possible to see the differences of i.e. biomas at time A vs time B
+#the function to do a mean of every level of the raster (composed of pixels) and every mean is a point, linking this point we have a profile (in this case energy potential in world). 
+-> #this profile is shown next to the map
 
 #change colors...yellow has the maximum impact to our eyes
 clymin <- colorRampPalette(c('yellow','red','blue'))(100) #clyellowminimum, blue max
@@ -42,9 +42,11 @@ plot(copNDVI, col=clymax)
 
 dev.off()
 
+
+plot(copNDVI, col=clymax) 
 #let's zoom in a certain part of map
 #how to crop in italy, crop function is for geographic subset
-ext <- c(0,20,35,55) #extension declared (xmin,xmax,ymin,ymax)
+ext <- c(0,20,35,55)) #extension declared (xmin,xmax,ymin,ymax)
 copNDVI_Italy <- crop(copNDVI, ext) #assign to crop a new name
 plot(copNDVI_Italy, col=clymax) #color 
 ------------------------------------------
