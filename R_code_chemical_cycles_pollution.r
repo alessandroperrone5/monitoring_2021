@@ -21,7 +21,7 @@ EN13 <- raster("EN_0013.png")
 #otherwise all together
 rlist <- list.files(pattern="EN")
 rlist 
-list_rast <- lapply(rlist, raster)
+list_rast <- lapply(rlist, raster) #lapply=apply the raster fuction to the list of file
 ENstack <- stack(list_rast)
 
 #let's plot the data
