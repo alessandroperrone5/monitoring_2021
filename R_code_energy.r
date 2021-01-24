@@ -60,7 +60,7 @@ plot(copNDVI_Italy, col=clymax) #color
 library(raster)
 library(RStoolbox)
 setwd("C:/lab/")
-#now we have to import from lab to R the images, if there's only whan band/layer the function is raster, but we have also NIRlayer so is brick
+#now we have to import from lab to R the images, if there's only one band/layer the function is raster, but we have also NIRlayer so is brick
 defor1 <- brick("defor1_.jpg")
 plotRGB(defor1, r=1, g=2, b=3, stretch="Lin")
 # Exercise: import the defor2_.jpg image
