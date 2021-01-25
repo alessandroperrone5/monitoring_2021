@@ -35,7 +35,7 @@ library(raster) #raster = using spatial data(reading,modelling,analyzing,etc.); 
 setwd("C:/lab/") #setting new working directory
 tmar19 <- raster ("c_gls_LST10-TCI_201903210000_GLOBE_GEO_V1.2.1.nc") #raster function = import and read data
 cl =colorRampPalette (c('blue','red','yellow')) (100) #colorRampPalette = using and edit color schemes, yellow is used for maximum values because it is the colour that attracts the human eye the most, 100 is the number of color in the used color scale; #c= setting things
-plot(tmar19,col=cl) #plot = plotting/showing of R objects
+plot(tmar19,col=cl, main="Global LST in March 2019") #plot = plotting/showing of R objects; #main = giving a title
 ext <- c(15.3061,18.8134,39.7649,42.0024) #ext = defining minimum and maximum of x, y variables; these are the Taranto coordinates  
 tmar19_Taranto <- crop(tmar19, ext) #crop= zooming in on a specific part of the map (the specific area analyzed), it's for geographic subset; #,ext = the extension previously declared
 plot(tmar19_Taranto, col=cl, main="LST in Taranto (03/2019)") #this plot shows the LandSurfaceTemperature in the area analyzed in March 2019
@@ -44,7 +44,7 @@ plot(tmar19_Taranto, col=cl, main="LST in Taranto (03/2019)") #this plot shows t
 #let's plot the LST in March 2020
 tmar20 <- raster ("c_gls_LST10-TCI_202003210000_GLOBE_GEO_V1.2.1.nc")
 cl=colorRampPalette (c('blue','red','yellow')) (100)
-plot(tmar20, col=cl)
+plot(tmar20, col=cl, main="Global LST in March 2020")
 ext <- c(15.3061,18.8134,39.7649,42.0024)
 tmar20_Taranto <- crop (tmar20, ext)
 plot(tmar20_Taranto, col=cl, main="LST in Taranto (03/2020)")
@@ -52,7 +52,7 @@ plot(tmar20_Taranto, col=cl, main="LST in Taranto (03/2020)")
 #To be sure, each period should be analysed and compared with each other. For example, comparing the same period but in the year 2017.
 tmar17 <- raster ("c_gls_LST10-TCI_201703210000_GLOBE_GEO_V1.2.1.nc")
 cl=colorRampPalette (c('blue','red','yellow')) (100)
-plot(tmar17, col=cl)
+plot(tmar17, col=cl, main="Global LST in March 2017")
 ext <- c(15.3061,18.8134,39.7649,42.0024)
 tmar17_Taranto <- crop (tmar17, ext)
 plot(tmar17_Taranto, col=cl, main="LST in Taranto (03/2017)")
