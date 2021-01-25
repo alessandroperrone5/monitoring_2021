@@ -28,3 +28,37 @@ plot(Taranto_mar_NO2, col=cl) # plot the two maps with this new matrix
 difNO2 <- Taranto_jan_NO2 - Taranto_mar_NO2
 cldif <- colorRampPalette (c('blue','black','yellow')) (100) #where the new map is more yellow, it means there's a decrease of NO2 level 
 plot(difNO2, col=cldif)
+-------------------------------
+#The LST in three different periods in the ILVA area (Taranto)
+library(ncdf4) #ncdf4 = using nc data files
+library(raster) #raster = using spatial data(reading,modelling,analyzing,etc.); #library function= recalling packages
+setwd("C:/lab/") #setting new working directory
+tmar19 <- raster ("c_gls_LST10-TCI_201903210000_GLOBE_GEO_V1.2.1.nc") #raster function = import and read data
+cl =colorRampPalette (c('blue','red','yellow')) (100) #colorRampPalette = using and edit color schemes, yellow is used for maximum values because it is the colour that attracts the human eye the most, 100 is the number of color in the used color scale; #c= setting things
+plot(tmar19,col=cl) #plot = plotting/showing of R objects
+ext <- c(15.3061,18.8134,39.7649,42.0024) #ext = defining minimum and maximum of x, y variables; these are the Taranto coordinates  
+tmar19_Taranto <- crop(tmar19, ext) #crop= zooming in on a specific part of the map (the specific area analyzed), it's for geographic subset; #,ext = the extension previously declared
+plot(tmar19_Taranto, col=cl, main="LST in Taranto (03/2019)") #this plot shows the LandSurfaceTemperature in the area analyzed in March 2019
+#let's see if there could be possible correlations between NO2 level, LST, and the three factors which limited the production of ILVA 
+#it's supposed that if there's any correlations, the LST in March 2019 would be higher than in March 2020 (the "worst" period of ILVA)
+#let's plot the LST in March 2020
+tmar20 <- raster ("c_gls_LST10-TCI_202003210000_GLOBE_GEO_V1.2.1.nc")
+cl=colorRampPalette (c('blue','red','yellow')) (100)
+plot(tmar20, col=cl)
+ext <- c(15.3061,18.8134,39.7649,42.0024)
+tmar20_Taranto <- crop (tmar20, ext)
+plot(tmar20_Taranto, col=cl, main="LST in Taranto (03/2020)")
+#There are certainly other factors influencing the differences between the two periods, but as expected during March 2020 the temperature was lower. 
+#To be sure, each period should be analysed and compared with each other. For example, comparing the same period but in the year 2017.
+tmar17 <- raster ("c_gls_LST10-TCI_201703210000_GLOBE_GEO_V1.2.1.nc")
+cl=colorRampPalette (c('blue','red','yellow')) (100)
+plot(tmar17, col=cl)
+ext <- c(15.3061,18.8134,39.7649,42.0024)
+tmar17_Taranto <- crop (tmar17, ext)
+plot(tmar17_Taranto, col=cl, main="LST in Taranto (03/2017)")
+#as the image shows, the LST is lower in March 2020 than in March 2017 (in which the LST is higher than in March 2019)
+#let's put the images of these three different years in the same plot
+par(mfrow=c(1,3)) #1rows, 3columns
+plot(tmar20_Taranto, col=cl, main="2020")
+plot(tmar19_Taranto, col=cl, main="2019")
+plot(tmar17_Taranto, col=cl, main="2017")
