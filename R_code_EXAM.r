@@ -56,7 +56,7 @@ plot(tmar17, col=cl, main="Global LST in March 2017")
 ext <- c(15.3061,18.8134,39.7649,42.0024)
 tmar17_Taranto <- crop (tmar17, ext)
 plot(tmar17_Taranto, col=cl, main="LST in Taranto (03/2017)")
-#as the image shows, the LST is lower in March 2020 than in March 2017 (in which the LST is higher than in March 2019)
+#as the image shows, the LST is lower in March 2020 than in March 2017 (in which the LST is lower than in March 2019)
 #let's put the images of these three different years in the same plot
 par(mfrow=c(1,3)) #1rows, 3columns
 plot(tmar20_Taranto, col=cl, main="2020")
