@@ -68,36 +68,36 @@ head(meuse)
 --------
 9/11
 #LECTURE ON ECOLOGICAL
-how to recall sp packages and data meuse
+#how to recall sp packages and data meuse
 library(sp)
 data(meuse)
 pairs(meuse)
 head(meuse)
 
-cadmium, copper, lead, zinc
-pairs with soil variables
-from column 3 to column 6
+#cadmium, copper, lead, zinc
+#pairs with soil variables
+#from column 3 to column 6
 pairs(meuse[,3:6])
 
 dev.off() --> close window
 
-let's use the names of column
+#let's use the names of column
 pairs(~ cadmium + copper + lead + zinc, data=meuse)
-tilde is going to be done by alt+126
+#tilde is going to be done by alt+126
 
 #let's prettify the graphs
-exercise: just use cadmium, lead, zinc
+#exercise: just use cadmium, lead, zinc
 pairs(~ cadmium + lead + zinc, data=meuse)
 
-exercise: change the color
+#exercise: change the color
 pairs(~ cadmium + copper + lead + zinc, data=meuse, col="red")
 #for the future change colours of single panels by the par ()function
 
-exercise: change the symbol to filled triangles: pch
+#exercise: change the symbol to filled triangles: pch
 pairs(~ cadmium + copper + lead + zinc, data=meuse, col="red", pch=17)
 
-nice page
-https://statisticsglobe.com/r-pairs-plot-example/t
+#nice page
+#https://statisticsglobe.com/r-pairs-plot-example/t
 
-exercise: increase size of triangles
+#exercise: increase size of triangles
 pairs(~ cadmium + copper + lead + zinc, data=meuse, col="red", pch=17, cex=3)
