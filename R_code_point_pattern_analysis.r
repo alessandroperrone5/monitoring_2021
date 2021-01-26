@@ -146,7 +146,7 @@ points(leo_ppp)
                 
 #save workspace : go to "file" and "save workspace"
  ------
-4/12
+#4/12
 #interpolatation of students data
 setwd("C:/lab/")
 #load function: reload datasets saved
