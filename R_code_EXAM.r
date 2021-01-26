@@ -20,7 +20,7 @@ cl <- colorRampPalette (c('red','orange','yellow')) (100)
 plot(Taranto_mar_NO2, col=cl, main="Taranto NO2 level in Mar") #now it's shown the level of NO2 in January in the specific area analyzed
 
 #how to compare the two obtained maps
-par(mfrow=c(1,2)) #par = setting graphical parameters => par(mfrow = c (nrows,ncolumns) = creating a matrix of nrows, ncolumns to compare the two obtained maps
+par(mfrow=c(1,2)) #par = setting graphical parameters => par(mfrow = c (nrows,ncolumns) = creating a matrix of nrows, ncolumns to plot the two obtained maps together and compare them
 plot(Taranto_jan_NO2, col=cl)
 plot(Taranto_mar_NO2, col=cl) # plot the two maps with this new matrix
 
