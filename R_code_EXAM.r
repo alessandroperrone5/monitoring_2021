@@ -1,5 +1,4 @@
 #The NO2 level in the ILVA area (Taranto)
-#SLIDE 4-5
 setwd("C:/lab/") #"..." (brackets) = importing data from an external source; #setwd function= setting a new working directory
 library(raster) #raster package (already installed with the function install.packages("raster")) = using spatial data(reading,modelling,analyzing,etc.); #library function= recalling packages
 EU_jan_NO2 <- raster("EN_0001.png") #raster function = import and read data; #EU_jan_NO2 <- = giving a name to this data
@@ -31,7 +30,6 @@ cldif <- colorRampPalette (c('blue','black','yellow')) (100) #where the new map 
 plot(difNO2, col=cldif)
 -------------------------------
 #The LST in three different periods in the ILVA area (Taranto)
-#SLIDE 6-7
 library(ncdf4) #ncdf4 = using nc data files
 library(raster) #raster = using spatial data(reading,modelling,analyzing,etc.); #library function= recalling packages
 setwd("C:/lab/") #setting new working directory
