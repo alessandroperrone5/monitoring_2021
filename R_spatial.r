@@ -76,7 +76,7 @@ covid
 head(covid)
 summary(covid)
 
-#use ggplot2 library
+#use ggplot2 package
 library(ggplot2)
 ggplot(covid, aes(x = lon, y = lat)) + geom_point()
 #changing the size of data based on number of cases
