@@ -62,7 +62,7 @@ ggplot(d, aes(x = biofuels, y = oxydative)) + geom_polygon()
 setwd (wd=working directory)
 
 #setwd for Windows
-setwd("C:/lab")
+setwd("C:/lab/")
 
 #read.table to import dataset inside R
 covid <- read.table("covid_agg.csv", header=TRUE)
