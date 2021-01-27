@@ -20,7 +20,7 @@ install.packages(c("raster","RStoolbox"))
 setwd("C:/lab/")
 #let's consider 4 bands (blue,green,red,nearinfrared)
 p224r63_2011 <- brick("p224r63_2011_masked.grd") #p stays for "path" and r for "row"
-#brick is the function to download in r all of the data
+#brick is the function to download in r all of the data (multi-band/layer)
 p224r63_2011
 plot(p224r63_2011)
 cl <- colorRampPalette(c('black','grey','light grey'))(100) # 
