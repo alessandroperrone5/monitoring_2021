@@ -58,7 +58,7 @@ Error in h(simpleError(msg, call)) :
 attach(meuse)
 plot(cadmium,zinc)
 
-#pairs --> scatterplot matrices (to confront all the elements)
+#pairs --> scatterplot matrices (to compare all the elements)
 pairs(meuse)
 
 #head is used to see the first data
