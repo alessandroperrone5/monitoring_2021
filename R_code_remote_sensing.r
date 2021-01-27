@@ -1,12 +1,12 @@
 #lecture 21/12
 #r code for remote sensing data analysis to monitor ecosystem changes in space and time
-#So what we learned today was that satellite images are composed by different brands and we can use these bands to see the color with different manner
+#So what we learned today was that satellite images are composed by different bands and we can use these bands to see the color with different manner
 #wavelenght: the distance from one pick to the other one; the higher the wavelenghts, the lower the frequency / how the light is spread / blue-green-red lights (rainbow)
 #human just see wavelenght lights from blue until red...there's ULTRAVIOLET, INFRARED wavelenghts...
 #DVI (Difference Vegetation Index) = NIR(nearinfrared reflectance) - RED (red reflectance) = in healthy leaf is 100-0= 100
 
-#satellite images actually are masses of numbers, with reflectance of different objects in the field and that reference can be converted to color.
-#an image here and each color actually is a number. This number is how much the light is reflected by the different options.
+#satellite images actually as matrices of numbers, with reflectance of different objects in the field and that reference can be converted to color.
+#each color actually is a number. This number is how much the light is reflected by the different options.
 
 
 
