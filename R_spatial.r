@@ -70,7 +70,7 @@ covid <- read.table("covid_agg.csv", header=TRUE)
 covid
 --------------------------
 #lecture 20/11
-setwd("C:/lab")
+setwd("C:/lab/")
 covid <- read.table("covid_agg.csv", header=TRUE)
 covid
 head(covid)
